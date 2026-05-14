@@ -181,14 +181,16 @@ Svar alltid på norsk. Vær varm og direkte som den beste ansatte i anlegget. St
     #baw-avatar-img {
       position: relative; transition: transform 0.2s;
     }
-    #baw-avatar-img img {
+    #baw-avatar-img img, #baw-avatar-img svg {
       width: 130px; height: 170px;
       border-radius: 50% 50% 44% 44% / 38% 38% 62% 62%;
-      object-fit: cover; object-position: top center; display: block;
+      display: block;
       border: 4px solid white;
       box-shadow: 0 0 0 3px #AABBD4, 0 8px 28px rgba(27,59,111,0.22);
+      overflow: hidden;
     }
-    #baw-person:hover #baw-avatar-img img { transform: scale(1.03); transition: transform 0.2s; }
+    #baw-person:hover #baw-avatar-img img,
+    #baw-person:hover #baw-avatar-img svg { transform: scale(1.03); transition: transform 0.2s; }
     #baw-online-dot {
       position: absolute; bottom: 14px; right: 4px;
       width: 15px; height: 15px; border-radius: 50%;
@@ -323,7 +325,21 @@ Svar alltid på norsk. Vær varm og direkte som den beste ansatte i anlegget. St
         <div id="baw-dismiss-btn" title="Lukk">×</div>
         <div id="baw-speech" style="display:none;"></div>
         <div id="baw-avatar-img">
-          <img src="https://askerbilvask.no/wp-content/uploads/2023/01/asker-bilvask-logo-mod.jpg" alt="Breez-rådgiver"/>
+          <svg width="130" height="170" viewBox="0 0 130 170" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="abGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B3B6F"/>
+      <stop offset="100%" style="stop-color:#2A5298"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="130" height="170" rx="0" fill="url(#abGrad)"/>
+  <text x="65" y="95" text-anchor="middle" dominant-baseline="middle"
+    font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+    font-weight="800" font-size="52" fill="white" letter-spacing="-2">AB</text>
+  <text x="65" y="138" text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+    font-weight="500" font-size="13" fill="rgba(255,255,255,0.7)" letter-spacing="1">BILVASK</text>
+</svg>
           <div id="baw-online-dot"></div>
         </div>
         <div id="baw-name-tag">${CONFIG.storeName}</div>
