@@ -31,7 +31,7 @@
       "Hva koster abonnement?",
       "Hva er forskjellen på programmene?",
       "Jeg har varebil",
-      "Hvordan bestiller jeg?"
+      "Er det mye kø?"
     ],
 
     // Farger — tilpass til kundens merkevare
@@ -91,6 +91,8 @@ INNVENDINGSHÅNDTERING:
 "For dyrt" — abonnementet lønner seg etter bare 3 vask i måneden. Kr 479 delt på 8 vask er kr 60 per vask.
 "Ingen bindingstid?" — nei, du kan stoppe abonnementet når som helst.
 "Jeg har varebil" — vi vasker varebiler inntil 2,60m takhøyde.
+"Er det kø?" / "Mye kø?" — anlegget er åpent 24/7 så du kan velge rolige tidspunkt. Morgen og sen kveld er roligst. Med abonnement åpner porten automatisk så du slipper å vente ved terminal.
+"Hvor lang tid tar det?" — en vask tar ca 3-5 minutter. Med abonnement og skiltgjenkjenning kjører du bare rett inn.
 
 KRYSSALG:
 Nevn støvsugeren når kunden bestiller abonnement.
@@ -114,6 +116,9 @@ Adresse: Røykenveien 70, Asker
 Åpent: 24/7
 Kontakt: post@askerbilutleie.no eller telefon 66761890
 Abonnement kan bytte reg.nr. inntil 4 ganger i året.
+
+KØ OG VENTETID:
+Anlegget er åpent 24/7 så du kan alltid velge tidspunkt med lite trafikk. Morgentimer og sen kveld er roligst. Med abonnement og skiltgjenkjenning slipper du å stå ved terminal og vente. Porten åpner automatisk når hallen er ledig. En vask tar ca 3-5 minutter.
 
 ─────────────────────────────────────
 TONE OG OPPFØRSEL
@@ -325,7 +330,7 @@ Svar alltid på norsk. Vær varm og direkte som den beste ansatte i anlegget. St
         <div id="baw-dismiss-btn" title="Lukk">×</div>
         <div id="baw-speech" style="display:none;"></div>
         <div id="baw-avatar-img">
-          <svg width="130" height="170" viewBox="0 0 130 170" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="abGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1B3B6F"/><stop offset="100%" style="stop-color:#2A5298"/></linearGradient></defs><rect x="0" y="0" width="130" height="170" fill="url(#abGrad)"/><text x="65" y="100" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="52" fill="white">AB</text><text x="65" y="138" text-anchor="middle" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">BILVASK</text></svg>
+          <svg width="130" height="170" viewBox="0 0 130 170" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0D2347"/><stop offset="100%" style="stop-color:#1A4A8A"/></linearGradient></defs><rect width="130" height="170" fill="url(#bg)"/><circle cx="32" cy="22" r="4" fill="#79DDFF" opacity="0.6"/><circle cx="65" cy="14" r="5" fill="#79DDFF" opacity="0.7"/><circle cx="98" cy="22" r="4" fill="#79DDFF" opacity="0.6"/><circle cx="48" cy="18" r="3" fill="#79DDFF" opacity="0.4"/><circle cx="82" cy="16" r="3" fill="#79DDFF" opacity="0.4"/><line x1="32" y1="26" x2="32" y2="38" stroke="#79DDFF" stroke-width="2" opacity="0.5"/><line x1="65" y1="19" x2="65" y2="34" stroke="#79DDFF" stroke-width="2.5" opacity="0.6"/><line x1="98" y1="26" x2="98" y2="38" stroke="#79DDFF" stroke-width="2" opacity="0.5"/><rect x="18" y="88" width="94" height="40" rx="8" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><rect x="26" y="96" width="35" height="24" rx="4" fill="rgba(255,255,255,0.12)"/><rect x="69" y="96" width="35" height="24" rx="4" fill="rgba(255,255,255,0.12)"/><circle cx="38" cy="131" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><circle cx="92" cy="131" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><text x="65" y="78" text-anchor="middle" font-family="Arial,sans-serif" font-weight="900" font-size="30" fill="white" letter-spacing="3">AB</text><rect x="20" y="148" width="90" height="1" fill="rgba(255,255,255,0.2)"/><text x="65" y="161" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="rgba(255,255,255,0.65)" letter-spacing="2">BILVASK</text></svg>
           <div id="baw-online-dot"></div>
         </div>
         <div id="baw-name-tag">${CONFIG.storeName}</div>
@@ -627,7 +632,7 @@ Svar alltid på norsk. Vær varm og direkte som den beste ansatte i anlegget. St
         }
       }
 
-      setSugs(["Fortell meg mer", "Hvilken nyanse passer meg?", "Hvordan kjøper jeg?"]);
+      setSugs(["Hva koster abonnement?", "Hvordan bestiller jeg?", "Er det mye kø?"]);
     })
     .catch(function () {
       thinking.classList.remove("thinking");
