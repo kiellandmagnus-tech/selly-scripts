@@ -473,7 +473,10 @@ Svar alltid p\u00e5 norsk. V\u00e6r varm og direkte. Kunden er allerede p\u00e5 
       var productCard = "";
       var cleanReply = reply.replace(/\[PRODUKT:([^\]]+)\]/g, function(match, inner) {
         var parts = inner.split("|");
-        productCard = makeProductCard(parts[0] || "", parts[1] || "", parts[2] || "https://askerbilvask.no");
+        var name  = (parts[0] || "").trim();
+        var price = (parts[1] || "").trim();
+        var url   = (parts[2] || "https://askerbilvask.no").trim();
+        productCard += makeProductCard(name, price, url);
         return "";
       }).replace(/\*\*/g, "").trim();
       thinking.innerHTML = cleanReply + productCard;
