@@ -479,7 +479,18 @@ Svar alltid p\u00e5 norsk. V\u00e6r varm og direkte. Kunden er allerede p\u00e5 
         productCard += makeProductCard(name, price, url);
         return "";
       }).replace(/\*\*/g, "").trim();
-      thinking.innerHTML = cleanReply + productCard;
+      // Convert bare URLs in text to clickable buttons
+      var processedReply = cleanReply.replace(
+        /(https:\/\/[^\s<]+)/g,
+        function(url) {
+          var label = url.includes("abonnement") ? "Bestill abonnement \u2192" :
+                      url.includes("varebil") ? "Varebil abonnement \u2192" :
+                      url.includes("firma") ? "Firma-abonnement \u2192" :
+                      url.includes("personbil") ? "Se enkeltvask \u2192" : "G\u00e5 til siden \u2192";
+          return '<a href="' + url + '?utm_source=selly&utm_medium=chat&utm_campaign=ai-agent" target="_blank" style="display:inline-block;margin-top:10px;background:#1B3B6F;color:white;font-size:13px;font-weight:700;padding:10px 16px;border-radius:10px;text-decoration:none;">' + label + '</a>';
+        }
+      );
+      thinking.innerHTML = processedReply + productCard;
       msgsEl.scrollTop = msgsEl.scrollHeight;
       setSugs(["Hva koster abonnement?", "Hvordan bestiller jeg?", "Er det mye k\u00f8?"]);
     })
